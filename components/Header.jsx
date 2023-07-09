@@ -1,16 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
-import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import Wrapper from "./Wrapper";
 // import asma_logo from "../public/img/asma_logo.png";
 
-const data = [
-  { id: 1, name: "Home", url: "/" },
-  { id: 2, name: "About", url: "/about" },
-  { id: 3, name: "Categories" },
-  { id: 4, name: "Contact", url: "/contact" },
-];
+// //const data = [
+//   //{ id: 1, name: "Home", url: "/" },
+//  // { id: 2, name: "About", url: "/about" },
+//   //{ id: 3, name: "Categories" },
+//   //{ id: 4, name: "Contact", url: "/contact" },
+// //];
 
 const Header = () => {
   return (
@@ -39,7 +37,10 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="text-[14px] font-[600] uppercase" href="#">
+                    <Link
+                      className="text-[14px] font-[600] uppercase"
+                      href="/product"
+                    >
                       Product
                     </Link>
                   </li>
@@ -61,7 +62,10 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="text-[14px] font-[600] uppercase" href="#">
+                    <Link
+                      className="text-[14px] font-[600] uppercase"
+                      href="/product"
+                    >
                       Product
                     </Link>
                   </li>
@@ -71,11 +75,9 @@ const Header = () => {
             {/* header_right */}
             <div className="flex gap-[30px] items-center relative">
               <Link href="/" className="ri-search-line text-[23px]"></Link>
-              <Link
-                href="/"
-                className="ri-shopping-bag-line text-[23px]"
-              ></Link>
-              <span className=" item_floating_header ">7</span>
+              <Link href="/cart" className="ri-shopping-bag-line text-[23px]">
+                <span className=" item_floating_header ">7</span>
+              </Link>
             </div>
           </div>
         </Wrapper>
