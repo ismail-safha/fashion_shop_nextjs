@@ -4,8 +4,9 @@ import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import Layout from "../components/Layout";
 import { Store } from "../utils/Store";
+import dynamic from "next/dynamic";
 
-export default function CartScreen() {
+function CartScreen() {
   const router = useRouter();
 
   // eslint-disable-next-line no-unused-vars
@@ -109,3 +110,5 @@ export default function CartScreen() {
     </Layout>
   );
 }
+
+export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });

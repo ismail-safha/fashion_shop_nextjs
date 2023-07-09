@@ -40,5 +40,10 @@
    4. redirect to cart screen after add to cart
 
 7. Update Quanity In The Cart
+
    1. add select box for quantity
    2. handle select box change
+
+8. Save Cart Items
+   1. install js-cookie package
+   2. save and retreive cart items in cookies

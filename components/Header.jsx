@@ -1,21 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
-import { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Store } from "../utils/Store";
 import Wrapper from "./Wrapper";
 // import asma_logo from "../public/img/asma_logo.png";
 
-// //const data = [
-//   //{ id: 1, name: "Home", url: "/" },
-//  // { id: 2, name: "About", url: "/about" },
-//   //{ id: 3, name: "Categories" },
-//   //{ id: 4, name: "Contact", url: "/contact" },
-// //];
 
 const Header = () => {
   // eslint-disable-next-line no-unused-vars
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
+
+  const [cartItemsCount, setCartItemsCount] = useState(0);
+  useEffect(() => {
+    setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
+  }, [cart.cartItems]);
 
   return (
     <header className="">
@@ -82,9 +81,9 @@ const Header = () => {
             <div className="flex gap-[30px] items-center relative">
               <Link href="/" className="ri-search-line text-[23px]"></Link>
               <Link href="/cart" className="ri-shopping-bag-line text-[23px]">
-                {cart.cartItems.length > 0 && (
+                {cartItemsCount > 0 && (
                   <span className=" item_floating_header ">
-                    {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                    {cartItemsCount}
                   </span>
                 )}
               </Link>

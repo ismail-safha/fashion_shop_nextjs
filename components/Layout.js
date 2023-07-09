@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Wrapper from "./Wrapper";
 
+
 const Layout = ({ title, children }) => {
   return (
     <>
