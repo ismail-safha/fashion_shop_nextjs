@@ -1,5 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
+import { useContext } from "react";
+import { Store } from "../utils/Store";
 import Wrapper from "./Wrapper";
 // import asma_logo from "../public/img/asma_logo.png";
 
@@ -11,6 +13,10 @@ import Wrapper from "./Wrapper";
 // //];
 
 const Header = () => {
+  // eslint-disable-next-line no-unused-vars
+  const { state, dispatch } = useContext(Store);
+  const { cart } = state;
+
   return (
     <header className="">
       <section className="bg-[#f5f5f5] leading-4 uppercase text-[14px] tracking-[0.8px] p-[16px] text-center">
@@ -76,7 +82,11 @@ const Header = () => {
             <div className="flex gap-[30px] items-center relative">
               <Link href="/" className="ri-search-line text-[23px]"></Link>
               <Link href="/cart" className="ri-shopping-bag-line text-[23px]">
-                <span className=" item_floating_header ">7</span>
+                {cart.cartItems.length > 0 && (
+                  <span className=" item_floating_header ">
+                    {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                  </span>
+                )}
               </Link>
             </div>
           </div>
