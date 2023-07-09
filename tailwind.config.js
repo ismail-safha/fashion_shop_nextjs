@@ -23,10 +23,14 @@ module.exports = {
 
       lg: { max: "1023px" },
       // => @media (max-width: 1023px) { ... }
+      lgm: { min: "1023px" },
+      // => @media (max-width: 1023px) { ... }
       lgx: { max: "900px" },
       // => @media (max-width: 1023px) { ... }
 
       md: { max: "767px" },
+      // => @media (max-width: 767px) { ... }
+      mdm: { min: "767px" },
       // => @media (max-width: 767px) { ... }
 
       sm: { max: "639px" },

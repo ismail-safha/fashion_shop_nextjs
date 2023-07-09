@@ -16,7 +16,7 @@ const Layout = ({ title, children }) => {
       <div>
         <Header />
         <ManeBanner />
-        <main>
+        <main className="mt-5 mb-5">
           <Wrapper>{children}</Wrapper>
         </main>
         <Footer />
