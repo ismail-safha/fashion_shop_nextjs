@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Footer from "./Footer";
 import Header from "./Header";
-import ManeBanner from "./ManeBanner";
 import Wrapper from "./Wrapper";
 
 const Layout = ({ title, children }) => {
@@ -15,7 +14,6 @@ const Layout = ({ title, children }) => {
       </Head>
       <div>
         <Header />
-        <ManeBanner />
         <main className="mt-5 mb-5">
           <Wrapper>{children}</Wrapper>
         </main>
