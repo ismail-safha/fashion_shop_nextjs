@@ -5,7 +5,6 @@ import { Store } from "../utils/Store";
 import Wrapper from "./Wrapper";
 // import asma_logo from "../public/img/asma_logo.png";
 
-
 const Header = () => {
   // eslint-disable-next-line no-unused-vars
   const { state, dispatch } = useContext(Store);
@@ -18,7 +17,7 @@ const Header = () => {
 
   return (
     <header className="">
-      <section className="bg-[#f5f5f5] leading-4 uppercase text-[14px] tracking-[0.8px] p-[16px] text-center">
+      <section className="bg-[#1f1f1f] text-[#fff] leading-4 uppercase text-[14px] tracking-[0.8px] p-[16px] text-center">
         Livraison Gratuite à Partir de
         <span className="font-bold">1000 Dhs</span> d'Achat
       </section>
