@@ -9,6 +9,7 @@ import { Store } from "../../utils/Store";
 export default function ProductScreen() {
   const { state, dispatch } = useContext(Store);
   const { query } = useRouter();
+  const router = useRouter();
   const { slug } = query;
   const product = data.products.find((x) => x.slug == slug);
   if (!product) {
@@ -23,6 +24,7 @@ export default function ProductScreen() {
       return;
     }
     dispatch({ type: "CART_ADD_ITEM", payload: { ...product, quantity } });
+    router.push("/cart");
   };
 
   return (
