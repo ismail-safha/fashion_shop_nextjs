@@ -1,26 +1,29 @@
 // import Image from "next/image";
 import Link from "next/link";
+import Wrapper from "./Wrapper";
 
 export default function ProductItem({ product }) {
   return (
     <div className="card">
-      <Link href={`/product/${product.slug}`}>
-        <img
-          src={product.image}
-          alt={product.name}
-          className="rounded shadow  block h-[499px] w-[100%] object-cover"
-        ></img>
-      </Link>
-      <div className="flex flex-col items-center justify-center p-5">
+      <Wrapper>
         <Link href={`/product/${product.slug}`}>
-          <h2 className="text-lg">{product.name}</h2>
+          <img
+            src={product.image}
+            alt={product.name}
+            className="rounded shadow  block h-[499px] w-[100%] object-cover"
+          ></img>
         </Link>
-        <p className="mb-2">{product.brand}</p>
-        <p>${product.price}</p>
-        <button className="primary-button" type="button">
-          Add to cart
-        </button>
-      </div>
+        <div className="flex flex-col items-center justify-center p-5">
+          <Link href={`/product/${product.slug}`}>
+            <h2 className="text-lg">{product.name}</h2>
+          </Link>
+          <p className="mb-2">{product.brand}</p>
+          <p>${product.price}</p>
+          <button className="primary-button" type="button">
+            Add to cart
+          </button>
+        </div>
+      </Wrapper>
     </div>
   );
 }

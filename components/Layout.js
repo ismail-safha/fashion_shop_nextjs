@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Footer from "./Footer";
 import Header from "./Header";
-import Wrapper from "./Wrapper";
+// import Wrapper from "./Wrapper";
 
 const Layout = ({ title, children }) => {
   return (
@@ -15,7 +15,7 @@ const Layout = ({ title, children }) => {
       <div>
         <Header />
         <main className="mt-5 mb-5">
-          <Wrapper>{children}</Wrapper>
+          <div>{children}</div>
         </main>
         <Footer />
       </div>

@@ -25,11 +25,11 @@ const ManeBanner = () => {
         <Image src={circles_top} alt="" className="" />
       </div>
       {/* left */}
-      <div className="flex  flex-col relative gap-[40px] ml-[90px]">
+      <div className="flex  flex-col relative gap-[40px] ml-[90px] sm:ml-[54px] sm:mr-[20px] ">
         <div className="maneBanner_circles_srta">
           <Image src={circles_srta} alt="" className="" />
         </div>
-        <h1 className="font-Seasons_Bold font-[800] relative maneBanner_h1 inline-block  text-[80px] capitalize max-w-[200px]  leading-[80px] z-10 ">
+        <h1 className="font-Seasons_Bold font-[800] relative maneBanner_h1 inline-block  text-[80px] xs:text-[76px] capitalize max-w-[200px]  leading-[80px] z-10 ">
           Women Fashion
         </h1>
         <p className="z-10 text-[30px] font-[300] capitalize max-w-[400px]">
@@ -51,31 +51,37 @@ const ManeBanner = () => {
           <Image src={srta1} alt="" className="" />
         </div>
         <Swiper
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 3000,
+          //   disableOnInteraction: false,
+          // }}
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides="true"
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
-            depth: 100,
-            modifier: 2.5,
+            depth: 200,
+            modifier: 1,
           }}
           pagination={{ el: ".swiper-pagination", clickable: true }}
           modules={[Autoplay, EffectCoverflow, Pagination]}
           className="swiper_container"
         >
           <SwiperSlide>
-            <Image src={banar1} alt="" className="" />
+            <div className="image_banner">
+              <Image src={banar1} alt="" className="" />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Image src={banar3} alt="" className="" />
+            <div className="image_banner">
+              <Image src={banar3} alt="" className="" />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Image src={banar2} alt="" className="" />
+            <div className="image_banner">
+              <Image src={banar2} alt="" className="" />
+            </div>
           </SwiperSlide>
 
           <div className="slider-controler">
