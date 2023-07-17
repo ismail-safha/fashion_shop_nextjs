@@ -33,7 +33,7 @@ const Header = () => {
             </div>
             {/* header_center */}
             <div className="flex items-center gap-[137px] ">
-              <nav>
+              <nav className="md:hidden">
                 <ul className="flex gap-[40px] items-center">
                   <li>
                     <Link className="text-[14px] font-[600] uppercase" href="/">
@@ -56,9 +56,9 @@ const Header = () => {
                   alt="asma logo"
                   className="w-full object-cover  h-[80px]"
                 /> */}
-                asma_logo
+                Asmaa
               </Link>
-              <nav>
+              <nav className="md:hidden">
                 <ul className="flex gap-[40px] items-center">
                   <li>
                     <Link className="text-[14px] font-[600] uppercase" href="/">

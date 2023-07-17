@@ -1,24 +1,45 @@
-// import Image from "next/image";
 import Link from "next/link";
 import Wrapper from "./Wrapper";
 
 export default function ProductItem({ product }) {
   return (
-    <div className="card">
+    <div className="">
       <Wrapper>
-        <Link href={`/product/${product.slug}`}>
-          <img
-            src={product.image}
-            alt={product.name}
-            className="rounded shadow  block h-[499px] w-[100%] object-cover"
-          ></img>
-        </Link>
-        <div className="flex flex-col items-center justify-center p-5">
+        <div className="product_img relative">
+          <span className="product_brand">{product.brand}</span>
+          <div className="thumbnail">
+            <Link href={`/product/${product.slug}`}>
+              <img src={product.image} alt={product.name}></img>
+            </Link>
+          </div>
+          <div className="thumbnail hover">
+            <Link href={`/product/${product.slug}`}>
+              <img src={product.imgUrlThm} alt={product.name}></img>
+            </Link>
+          </div>
+          <div className="actions">
+            <ul>
+              <li>
+                <Link href="/cart">
+                  <i className="ri-star-line"></i>
+                </Link>
+              </li>
+              <li>
+                <Link href="/cart">
+                  <i className="ri-eye-line"></i>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="product_info">
           <Link href={`/product/${product.slug}`}>
-            <h2 className="text-lg">{product.name}</h2>
+            <h2 className="product_title">{product.name}</h2>
           </Link>
-          <p className="mb-2">{product.brand}</p>
-          <p>${product.price}</p>
+          <div className="product_price">
+            <span className="before">{product.OldPrice}</span>
+            <span>${product.price}</span>
+          </div>
           <button className="primary-button" type="button">
             Add to cart
           </button>
