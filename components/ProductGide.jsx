@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import Wrapper from "./Wrapper";
 import img1 from "../public/img/asmaa_product_6.jpg";
 import img2 from "../public/img/asmaa_product_7.jpg";

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Layout from "../components/Layout";
 import ManeBanner from "../components/ManeBanner";
-import ProductGide from "../components/productGide";
+import ProductGide from "../components/ProductGide";
+
 import ProductItem from "../components/ProductItem";
 import data from "../utils/data";
 
@@ -11,7 +12,6 @@ export default function Home() {
       <Layout title="home page">
         <ManeBanner />
         <ProductGide />
-        {/* <ProductItemTest /> */}
         <div className=" text-[#1F1F1F] text-center  px-[36px] py-[13px]  mt-[60px] mb-[60px]">
           <h1 className="text-[40px] ">Product</h1>
         </div>
