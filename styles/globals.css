@@ -13,7 +13,13 @@
 }
 
 .primary-button {
-  @apply rounded bg-[#dfc392] py-2 px-4 shadow outline-none hover:bg-amber-400  active:bg-amber-500;
+  @apply rounded bg-[#d5cbcb] py-2 px-4 shadow outline-none hover:bg-amber-100 active:bg-amber-100;
+}
+
+input,
+select,
+textarea {
+  @apply rounded border p-2  outline-none ring-indigo-300  focus:ring;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Prata&display=swap");
@@ -542,3 +548,6 @@ a {
 }
 
 /*===== end cart product  */
+/*  start login Screen  */
+
+/* End login Screen  */

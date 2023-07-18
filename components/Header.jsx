@@ -27,7 +27,7 @@ const Header = () => {
             {/* menu-bar*/}
             {/* header_left */}
             <div className="flex gap-[30px] items-center relative ">
-              <Link href="/" className="ri-user-line text-[23px]"></Link>
+              <Link href="/login" className="ri-user-line text-[23px]"></Link>
               <Link href="/" className="ri-star-line text-[23px] "></Link>
               <span className=" item_floating_header ">7</span>
             </div>
