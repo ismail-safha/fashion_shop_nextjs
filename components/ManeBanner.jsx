@@ -51,10 +51,10 @@ const ManeBanner = () => {
           <Image src={srta1} alt="" className="" />
         </div>
         <Swiper
-          // autoplay={{
-          //   delay: 3000,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides="true"

@@ -37,12 +37,9 @@ export default function ProductItem({ product }) {
             <h2 className="product_title">{product.name}</h2>
           </Link>
           <div className="product_price">
-            <span className="before">{product.OldPrice}</span>
-            <span>${product.price}</span>
+            <span className="before">DH {product.OldPrice}</span>
+            <span>DH {product.price}</span>
           </div>
-          <button className="primary-button" type="button">
-            Add to cart
-          </button>
         </div>
       </Wrapper>
     </div>
