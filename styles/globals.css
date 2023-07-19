@@ -8,6 +8,10 @@
   }
 }
 
+.dropdown-link {
+  @apply flex p-2 hover:bg-gray-200;
+}
+
 .card {
   @apply mb-5  block   rounded-lg border border-gray-200  shadow-md;
 }

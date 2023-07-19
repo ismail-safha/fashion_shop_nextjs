@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 import { Store } from "../utils/Store";
@@ -7,6 +7,9 @@ import Wrapper from "./Wrapper";
 // import asma_logo from "../public/img/asma_logo.png";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Menu } from "@headlessui/react";
+import DropdownLink from "./DropdownLink";
+import Cookies from "js-cookie";
 
 const Header = () => {
   const { status, data: session } = useSession();
@@ -19,6 +22,12 @@ const Header = () => {
   useEffect(() => {
     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
   }, [cart.cartItems]);
+
+  const logoutClickHandler = () => {
+    Cookies.remove("cart");
+    dispatch({ type: "CART_RESET" });
+    signOut({ callbackUrl: "/login" });
+  };
 
   return (
     <header className="">
@@ -35,7 +44,35 @@ const Header = () => {
               {status === "loading" ? (
                 "loading"
               ) : session?.user ? (
-                session?.user.name
+                <Menu as="div" className="relative inline-block">
+                  <Menu.Button className="text-[#272626] bg-[#fff9f4]">
+                    {session.user.name}
+                  </Menu.Button>
+                  <Menu.Items className="absolute left-0 z-20 w-56 origin-top-right bg-[#fff9f4]  shadow-lg ">
+                    <Menu.Item>
+                      <DropdownLink className="dropdown-link" href="/profile">
+                        Profile
+                      </DropdownLink>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <DropdownLink
+                        className="dropdown-link"
+                        href="/order-history"
+                      >
+                        Order History
+                      </DropdownLink>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <Link
+                        className="dropdown-link"
+                        href="#"
+                        onClick={logoutClickHandler}
+                      >
+                        Logout
+                      </Link>
+                    </Menu.Item>
+                  </Menu.Items>
+                </Menu>
               ) : (
                 <Link href="/login">
                   <span className="ri-user-line text-[23px]"></span>
