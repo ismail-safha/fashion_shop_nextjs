@@ -2,6 +2,8 @@ import Head from "next/head";
 import Footer from "./Footer";
 import Header from "./Header";
 // import Wrapper from "./Wrapper";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Layout = ({ title, children }) => {
   return (
@@ -12,6 +14,9 @@ const Layout = ({ title, children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <ToastContainer position="bottom-center" limit={1} />
+
       <div>
         <Header />
         <main className="mt-5 mb-5">

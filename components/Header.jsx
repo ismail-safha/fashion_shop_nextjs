@@ -1,11 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 import { Store } from "../utils/Store";
 import Wrapper from "./Wrapper";
 // import asma_logo from "../public/img/asma_logo.png";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Header = () => {
+  const { status, data: session } = useSession();
+  <ToastContainer position="bottom-center" limit={1} />;
   // eslint-disable-next-line no-unused-vars
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
@@ -27,7 +32,16 @@ const Header = () => {
             {/* menu-bar*/}
             {/* header_left */}
             <div className="flex gap-[30px] items-center relative ">
-              <Link href="/login" className="ri-user-line text-[23px]"></Link>
+              {status === "loading" ? (
+                "loading"
+              ) : session?.user ? (
+                session?.user.name
+              ) : (
+                <Link href="/login">
+                  <span className="ri-user-line text-[23px]"></span>
+                </Link>
+              )}
+
               <Link href="/" className="ri-star-line text-[23px] "></Link>
               <span className=" item_floating_header ">7</span>
             </div>
