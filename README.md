@@ -77,5 +77,10 @@
     3. show user menu
 
 13. Create Shipping Screen
+
     1. display address fields
     2. save address in context
+
+14. Create Payment Method Screen
+    1. dispaly payment methods
+    2. save payment method in context

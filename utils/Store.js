@@ -59,6 +59,16 @@ function reducer(state, action) {
         },
       };
     // End SAVE_SHIPPING_ADDRESS
+    // start SAVE_PAYMENT_METHOD
+    case "SAVE_PAYMENT_METHOD":
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          paymentMethod: action.payload,
+        },
+      };
+    // End SAVE_PAYMENT_METHOD
     default:
       return state;
   }
