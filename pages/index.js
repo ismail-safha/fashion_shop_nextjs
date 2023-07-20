@@ -4,9 +4,10 @@ import ManeBanner from "../components/ManeBanner";
 import ProductGide from "../components/ProductGide";
 
 import ProductItem from "../components/ProductItem";
-import data from "../utils/data";
+import Product from "../models/Product";
+import db from "../utils/db";
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <>
       <Layout title="home page">
@@ -16,7 +17,7 @@ export default function Home() {
           <h1 className="text-[40px] ">Product</h1>
         </div>
         <div className="grid grid-cols-1 gap-4 mdm:grid-cols-3 lgm:grid-cols-4">
-          {data.products.map((product) => (
+          {products.map((product) => (
             <ProductItem key={product.slug} product={product}></ProductItem>
           ))}
         </div>
@@ -26,4 +27,16 @@ export default function Home() {
       </Layout>
     </>
   );
+}
+
+// fetch data
+
+export async function getServerSideProps() {
+  await db.connect();
+  const products = await Product.find().lean();
+  return {
+    props: {
+      products: products.map(db.convertDocToObj),
+    },
+  };
 }
