@@ -46,6 +46,12 @@ function reducer(state, action) {
         },
       };
     // end CART_RESET
+
+    // start CART_CLEAR_ITEMS
+    case "CART_CLEAR_ITEMS":
+      return { ...state, cart: { ...state.cart, cartItems: [] } };
+    // end CART_CLEAR_ITEMS
+
     // start SAVE_SHIPPING_ADDRESS
     case "SAVE_SHIPPING_ADDRESS":
       return {

@@ -8,16 +8,17 @@ import Wrapper from "../components/Wrapper";
 import { Store } from "../utils/Store";
 
 export default function ShippingScreen() {
-  const router = useRouter();
-  const { state, dispatch } = useContext(Store);
-  const { cart } = state;
-  const { shippingAddress } = cart;
   const {
     handleSubmit,
     register,
     formState: { errors },
     setValue,
   } = useForm();
+
+  const { state, dispatch } = useContext(Store);
+  const { cart } = state;
+  const { shippingAddress } = cart;
+  const router = useRouter();
 
   useEffect(() => {
     setValue("fullName", shippingAddress.fullName);
@@ -147,7 +148,7 @@ export default function ShippingScreen() {
               type="tel"
               className="w-full"
               id="phone"
-              {...register("country", {
+              {...register("phone", {
                 required: "Please enter phone",
               })}
             />

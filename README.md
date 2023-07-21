@@ -93,6 +93,15 @@
     3. check product count in stock in add to cart
 
 16. Load Products MongoDB
+
     1. load products in home page from mongodb
     2. load products in product page from mongodb
     3. use product api to check count in stock in add to cart
+
+17. Create Place Order Screen
+    1. display shipping address
+    2. display payment method
+    3. display order items
+    4. implment create order
+       . In the section a get a error Next Auth.js - I can't get token with getToken({req})
+       solution: Make sure you add=> in api/orders/index const secret = process.env.NEXTAUTH_SECRET; and SECRET="YOUR_SECRET" to your .env file and restart your server.)
