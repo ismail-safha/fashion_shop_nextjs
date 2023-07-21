@@ -173,7 +173,14 @@
     3. show product data in form
 
 28. Upload Product Image
+
     1. create cloudinary account
     2. get cloudinary keys
     3. create upload api
     4. upload files in edit page
+
+29. Create And Delete Products
+    1. add create product button
+    2. build new product api
+    3. add handler for delete
+    4. implement delete api
