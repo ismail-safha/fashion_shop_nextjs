@@ -120,7 +120,13 @@
     3. call api on form submit
 
 20. Pay Order By PayPal
+
     1. add paypal button
     2. handle payment
     3. create backend api
     4. update order state
+
+21. Create Order History Screen
+    1. create my order api
+    2. create order history component
+    3. fetch orders and display them
