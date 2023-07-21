@@ -167,6 +167,13 @@
     3. use api in page
 
 27. Create Product Edit Page
+
     1. create edit page
     2. create api for product
     3. show product data in form
+
+28. Upload Product Image
+    1. create cloudinary account
+    2. get cloudinary keys
+    3. create upload api
+    4. upload files in edit page
