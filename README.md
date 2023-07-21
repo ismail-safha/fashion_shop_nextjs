@@ -155,6 +155,12 @@
     3. use api in page
 
 25. Deliver Order For Admin
+
     1. create deliver api
     2. add deliver button
     3. implement click handler
+
+26. List Products For Admin
+    1. create products page
+    2. create products api
+    3. use api in page
