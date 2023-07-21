@@ -133,6 +133,16 @@
     3. fetch orders and display them
 
 22. Update User Profile
+
     1. create profile screen
     2. show user info
     3. handle update user info
+
+---
+
+## ADMIN DASHBOARD
+
+23. Create Admin Dashboard
+    1. Create Admin Menu
+    2. create dashboard screen
+    3. Implement admin summary api
