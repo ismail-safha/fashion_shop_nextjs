@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import Layout from "../components/Layout";
 import ManeBanner from "../components/ManeBanner";
 import ProductGide from "../components/ProductGide";
@@ -22,7 +23,7 @@ export default function Home({ products }) {
           ))}
         </div>
         <div className="btn">
-          <Link href="/#">More Products</Link>
+          <Link href="/search">More Products</Link>
         </div>
       </Layout>
     </>

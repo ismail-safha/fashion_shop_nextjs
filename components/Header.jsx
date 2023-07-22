@@ -10,8 +10,17 @@ import "react-toastify/dist/ReactToastify.css";
 import { Menu } from "@headlessui/react";
 import DropdownLink from "./DropdownLink";
 import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const [query, setQuery] = useState("");
+
+  const router = useRouter();
+  const submitHandler = (e) => {
+    e.preventDefault();
+    router.push(`/search?query=${query}`);
+  };
+
   const { status, data: session } = useSession();
   <ToastContainer position="bottom-center" limit={1} />;
   // eslint-disable-next-line no-unused-vars
@@ -139,7 +148,26 @@ const Header = () => {
             </div>
             {/* header_right */}
             <div className="flex gap-[30px] items-center relative">
-              <Link href="/" className="ri-search-line text-[23px]"></Link>
+              {/* start search_icon */}
+              <form
+                onSubmit={submitHandler}
+                className="mx-auto  hidden w-full justify-center mdm:flex"
+              >
+                <input
+                  onChange={(e) => setQuery(e.target.value)}
+                  type="text"
+                  className="rounded-tr-none rounded-br-none p-1 text-sm   focus:ring-0"
+                  placeholder="Search products"
+                />
+                <button
+                  className="rounded rounded-tl-none rounded-bl-none bg-amber-300 p-1 text-sm dark:text-black"
+                  type="submit"
+                  id="button-addon2"
+                >
+                  <span className="ri-search-line text-[23px]"></span>
+                </button>
+              </form>
+              {/* end search_icon */}
               <Link href="/cart" className="ri-shopping-bag-line text-[23px]">
                 {cartItemsCount > 0 && (
                   <span className=" item_floating_header ">
