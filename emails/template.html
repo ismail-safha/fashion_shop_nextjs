@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+    <style>
+      /* Add your CSS styles here */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      .order-details {
+        margin-bottom: 20px;
+      }
+      .order-item {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+      }
+      .order-item img {
+        max-width: 100px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body style="text-align: center">
+    <h1
+      style="background-color: antiquewhite; font-size: 20px; padding: 20px 0"
+    >
+      Asmaa_shop
+    </h1>
+    <h2 style="background-color: black; color: #fff">Order Confirmation</h2>
+    <div class="order-details">
+      <p><strong>Full Name:</strong> {{shippingAddress.fullName}}</p>
+      <p><strong>Address:</strong> {{shippingAddress.address}}</p>
+      <p><strong>Phone:</strong> {{shippingAddress.phone}}</p>
+    </div>
+    <h3>Order Items</h3>
+    {{#each cartItems}}
+    <div class="order-item" style="text-align: center">
+      <img src="{{item.image}}" alt="{{item.name}}" />
+      <div style="padding: 30px 0; background-color: #ccc">
+        <p><strong>Item:</strong> {{item.name}}</p>
+        <p><strong>Price:</strong> ${{item.price}}</p>
+        <p><strong>Quantity:</strong> {{quantity}}</p>
+      </div>
+    </div>
+    {{/each}}
+    <div style="background-color: rgb(12, 9, 9); color: #fff">
+      <p><strong>Total Price:</strong> ${{totalPrice}}</p>
+    </div>
+  </body>
+</html>
+
+<!-- end test 4 -->

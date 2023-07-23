@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Order Placed</title>
+    <link rel="stylesheet" href="emailTemplate.css" />
+    <style>
+      /* Your inline CSS styles here */
+    </style>
+  </head>
+  <body>
+    <div class="email">
+      <h2>New Order Information</h2>
+      <p>
+        <strong>Shipping Address:</strong> %FULL_NAME%, %ADDRESS%, %CITY%,
+        %PHONE%
+      </p>
+      <p><strong>Total Price:</strong> $%TOTAL_PRICE%</p>
+      <h3>Order Items:</h3>
+      <ul>
+        %ITEMS_LIST%
+      </ul>
+    </div>
+  </body>
+</html>

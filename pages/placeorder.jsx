@@ -34,7 +34,7 @@ export default function PlaceOrderScreen() {
   }, [paymentMethod, router]);
 
   const [loading, setLoading] = useState(false);
-
+  // =====start send email
   const placeOrderHandler = async () => {
     try {
       setLoading(true);
@@ -47,6 +47,14 @@ export default function PlaceOrderScreen() {
         taxPrice,
         totalPrice,
       });
+      // test
+      await axios.post("/api/sendEmail", {
+        shippingAddress,
+        totalPrice,
+        cartItems,
+      });
+      // test
+
       setLoading(false);
       dispatch({ type: "CART_CLEAR_ITEMS" });
       Cookies.set(
@@ -61,7 +69,10 @@ export default function PlaceOrderScreen() {
       setLoading(false);
       toast.error(getError(err));
     }
+    console.log("test_email");
   };
+
+  // =====end send email
 
   return (
     <Layout title="Place Order">

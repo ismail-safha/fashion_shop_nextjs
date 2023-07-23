@@ -193,6 +193,11 @@
     3. use api in page
 
 31. Create Search Page
+
     1. create filters
     2. list products
     3. show filters
+
+32. Send Email to admin
+    1. nodemailer
+    2. Create template Email
